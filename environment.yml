@@ -1,0 +1,9 @@
+name: django
+channels:
+  - defaults
+dependencies:
+  - python
+  - pre-commit
+  - django
+  - black
+prefix: /home/sol/miniconda3/envs/django
