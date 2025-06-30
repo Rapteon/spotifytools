@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Exporter</title>
+</head>
+<body>
+    <header>
+        <h1>Exporter</h1>
+    </header>
+    <main>
+    {% for card in cards %}
+    <a href="{{card.url}}">
+        {{card.title}}
+    </a>
+    {% endfor %}
+    </main>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Exporter – Playlists</title>
+    <script src="{% static 'exporter/scripts/script.js' %}" type="text/javascript" defer></script>
+    <link href="{% static 'exporter/styles/style.css' %}" type="text/css" rel="stylesheet" />
+    <link href="{% static 'exporter/styles/playlists.css' %}" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1>Exporter</h1>
+        <h2>Playlists</h2>
+        <div class="btn-container">
+            <p>Total tracks: {{num_total_tracks}}</p>
+            <button onclick="downloadAllPlaylists({{playlists_json}})">Export all</button>
+        </div>
+    </header>
+    <main>
+        {% for pl in playlists %}
+        <div class="playlist">
+            <div class="name-container">
+                <h3>{{pl.name}}</h3>
+                <button onclick="toggleTracks('{{pl.name}}')">▲▼</button>
+            </div>
+            <div class="btn-container">
+                <p>Total tracks: {{pl.track_count}}</p>
+                <button onclick="downloadPlaylist({{pl.tracks_json}}, '{{pl.name}}')">Export as text</button>
+            </div>
+            <div class="tracks" id="{{pl.name}}">
+                {% for track in pl.tracks %}
+                <div>
+                    <span>{{track.artists.0.name}}</span> - <span>{{track.name}}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </main>
+    <footer></footer>
+</body>
+
+</html>

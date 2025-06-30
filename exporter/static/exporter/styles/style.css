@@ -1,0 +1,45 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Rule for laptops */
+@media screen and (min-width: 1200px) {
+    body {
+        display: grid;
+        grid-template-columns: 20% auto;
+        gap: 0.25em;
+        padding: 1em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main {
+        height: 91vh;
+        overflow: scroll;
+        margin: 1em;
+        padding: 1em;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+/* Rule for smartphones */
+@media screen and (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25em;
+        padding: 1em;
+    }
+
+    main {
+        height: 100%;
+    }
+}

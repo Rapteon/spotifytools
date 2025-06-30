@@ -1,0 +1,28 @@
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.name-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.3em;
+}
+
+.playlist {
+    margin: 0.3em;
+    padding: 0.3em;
+    border-width: 1px;
+    border-color: darkgrey;
+    border-radius: 3px;
+    border-style: groove;
+    margin: 0.25em;
+    min-width: 400px;
+}
+
+.name-container>h3 {
+    text-decoration-line: underline;
+    text-decoration-color: darkred;
+}
